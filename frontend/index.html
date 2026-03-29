@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>AlphaSense Demo</title></head>
+<body>
+  <h1>AlphaSense — Quick Demo</h1>
+  <input id="symbol" value="TCS"/>
+  <button id="check">Get Signal</button>
+  <pre id="out"></pre>
+<script>
+document.getElementById('check').onclick = async () => {
+  const symbol = document.getElementById('symbol').value;
+  const res = await fetch('http://localhost:8000/signal', {
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({symbol})
+  });
+  const data = await res.json();
+  document.getElementById('out').innerText = JSON.stringify(data, null, 2);
+}
+</script>
+</body>
+</html>
