@@ -1,5 +1,13 @@
-mkdir frontend backend agents data docs demo
-touch backend/requirements.txt frontend/package.json docs/architecture.png demo/demo_script.txt
-git add .
-git commit -m "scaffold project structure"
-git push
+{
+  "name": "alpha-sense-frontend",
+  "version": "1.0.0",
+  "description": "Frontend for Alpha Sense AI",
+  "main": "index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
